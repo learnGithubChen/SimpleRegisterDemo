@@ -14,7 +14,7 @@ public class User implements Serializable {
 	private int flag;// 用来区分是注册还是登陆
 
 	public int getFlag() {
-		return flag;
+		return flag; 
 	}
 
 	public void setFlag(int flag) {
