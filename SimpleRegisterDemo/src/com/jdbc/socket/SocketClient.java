@@ -86,7 +86,7 @@ public class SocketClient {
 					user.setPassword(value);
 					user.setFlag(2);
 					try {
-						objectOutput.writeObject(user);
+						objectOutput.writeObject(user);// 如果是同一个引用对象多次输出，即使改变它的成员变量的值，也是会输出第一次的值
 						objectOutput.flush();
 						previous = null;
 						System.out.println("请上传文件,输入文件路径，诸如e://a.png");

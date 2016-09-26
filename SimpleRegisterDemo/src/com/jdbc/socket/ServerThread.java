@@ -31,7 +31,7 @@ public class ServerThread extends Thread {
 					UserService userService = new UserService();
 					if (user.getFlag() == 1) {
 						userService.rigister(user);// ×¢²á
-					} else if(user.getFlag()==2){
+					} else if (user.getFlag() == 2) {
 						userService.login(user);// µÇÂ½
 
 					}
