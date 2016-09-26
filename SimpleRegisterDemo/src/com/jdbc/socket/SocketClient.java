@@ -23,7 +23,7 @@ public class SocketClient {
 		Scanner input = new Scanner(System.in);
 		System.out.println("«Î ‰»Î");
 		String previous = null;
-		User user = new User();
+		User user = null;
 		Socket socket = null;
 		OutputStream output = null;
 		ObjectOutputStream objectOutput = null;
@@ -41,6 +41,7 @@ public class SocketClient {
 			if ("1".equals(value) || REGISTER.equals(previous)) {
 				previous = REGISTER;
 				if (step == 1) {
+					user = new User();
 					System.out.println("«Î ‰»Î–’√˚");
 				} else if (step == 2) {
 					user.setUsername(value);
@@ -75,6 +76,7 @@ public class SocketClient {
 			} else if ("2".equals(value) || LOGIN.equals(previous)) {
 				previous = LOGIN;
 				if (step == 1) {
+					user = new User();
 					System.out.println("«Î ‰»Î–’√˚");
 
 				} else if (step == 2) {
@@ -82,8 +84,8 @@ public class SocketClient {
 					System.out.println("«Î ‰»Î√‹¬Î");
 				} else if (step == 3) {
 					user.setPassword(value);
+					user.setFlag(2);
 					try {
-						user.setFlag(2);
 						objectOutput.writeObject(user);
 						objectOutput.flush();
 						previous = null;
